@@ -25,24 +25,27 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
     return Column(
       children: <Widget>[
         Divider(height: 1.0),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 25),
-                child: TextField(
-                  controller: _controller,
-                  focusNode: _focusNode,
-                  decoration: InputDecoration.collapsed(hintText: "Talk to us"),
-                  onSubmitted: (message) => _sendMessage(message),
+        Container(
+          color: Colors.white,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: TextField(
+                    controller: _controller,
+                    focusNode: _focusNode,
+                    decoration: InputDecoration.collapsed(hintText: "Talk to us"),
+                    onSubmitted: (message) => _sendMessage(message),
+                  ),
                 ),
               ),
-            ),
-            IconButton(
-              icon: Icon(Icons.send),
-              onPressed: () => _sendMessage(_controller.text),
-            )
-          ],
+              IconButton(
+                icon: Icon(Icons.send),
+                onPressed: () => _sendMessage(_controller.text),
+              )
+            ],
+          ),
         ),
       ],
     );

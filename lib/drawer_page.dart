@@ -47,7 +47,7 @@ class DrawerPage extends StatelessWidget {
                 ),
               ).then(
                 (messageSent) {
-                  if (messageSent)
+                  if (messageSent != null && messageSent)
                     showDialog(
                       context: context,
                       builder: (context) {
